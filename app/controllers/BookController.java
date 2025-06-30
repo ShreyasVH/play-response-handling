@@ -28,7 +28,7 @@ public class BookController extends Controller
 	}
 
 	public Result list() {
-		return ok(Json.toJson(this.bookService.list()));
+		return ok(Json.toJson(new Response(this.bookService.list())));
 	}
 
 	public Result get(Long id) {
