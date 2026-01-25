@@ -1,13 +1,15 @@
-name := "play-mysql"
+name := "play-response-handling"
 
 version := "1.0.0"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.18"
 
 libraryDependencies += guice
 libraryDependencies += javaJpa
-libraryDependencies += "org.projectlombok" % "lombok" % "1.18.24" % "provided"
-libraryDependencies += "com.mysql" % "mysql-connector-j" % "8.0.31"
+libraryDependencies += "org.projectlombok" % "lombok" % "1.18.42" % "provided"
+libraryDependencies += "com.mysql" % "mysql-connector-j" % "9.5.0"
+libraryDependencies += "org.hibernate.orm" % "hibernate-core" % "7.2.0.Final"
 
+Compile / javacOptions ++= Seq("-proc:full")
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+lazy val root = (project in file(".")).enablePlugins(PlayJava)
